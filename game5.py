@@ -31,8 +31,10 @@ def ship_right():
     y = y + 15
     ship.setx(y)
 
+window.listen()
 window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 
 while True:
     window.update()
+
