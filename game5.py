@@ -1,17 +1,25 @@
 import turtle
 
-win = turtle.Screen()
-win.screensize(canvwidth=400, canvheight=400)
-win.bgcolor("Black")
-win.title("Space Shooters")
-
+window = turtle.Screen()
+window.setup(width=1000, height=400)
+window.bgcolor('black')
+window.tracer(0)
 
 ship = turtle.Turtle()
 ship.speed(0)
 ship.penup()
 ship.shape('square')
-ship.goto(0, -200)
+ship.goto(-450, 0)
 ship.color('red')
+
+def create_astroids():
+    astroid_ = turtle.Turtle()
+    astroid_.goto(0, 0)
+    astroid_.color("yellow")
+    astroid_.shape("square")
+    astroid_.shapesize(stretch_wid=5, stretch_len=5)
+
+create_astroids()
 
 def ship_left():
     y = ship.xcor()
@@ -27,4 +35,4 @@ window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 
 while True:
-    win.update()
+    window.update()
