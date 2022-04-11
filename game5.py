@@ -49,14 +49,14 @@ def ship_down():
 
 
 def border():
-    if ship.xcor()>390:
-        ship.setx(390)
-    elif ship.xcor()<-390:
-        ship.setx(-390)
-    elif ship.ycor()>300:
-        ship.sety(300)
-    elif ship.ycor()<-300:
-        ship.sety(-300)
+    if ship.xcor()>480:
+        ship.setx(480)
+    elif ship.xcor()<-480:
+        ship.setx(-480)
+    elif ship.ycor()>175:
+        ship.sety(175)
+    elif ship.ycor()<-175:
+        ship.sety(-175)
 
 
 
