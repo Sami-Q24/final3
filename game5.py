@@ -39,10 +39,17 @@ def ship_right():
     y = y + 15
     ship.setx(y)
 
+def border():
+    if ship.xcor()>200:
+        ship.setx(200)
+    elif ship.xcor()<-200:
+        ship.setx(-200)
+
 window.listen()
 window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 
 while True:
     window.update()
+    border()
 
