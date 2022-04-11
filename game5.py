@@ -1,15 +1,5 @@
 import turtle
 
-win = turtle.Screen()
-win.screensize(canvwidth=400, canvheight=400)
-win.bgcolor("Black")
-win.title("Space Shooters")
-win.tracer(0)
-
-
-
-import turtle
-
 window = turtle.Screen()
 window.setup(width=500, height=500)
 window.bgcolor('black')
@@ -34,6 +24,3 @@ window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 while True:
     window.update()
-
-while True:
-    win.update()
