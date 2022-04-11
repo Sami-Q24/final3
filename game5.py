@@ -1,9 +1,10 @@
 import turtle
 
-window = turtle.Screen()
-window.setup(width=500, height=500)
-window.bgcolor('black')
-window.tracer(0)
+win = turtle.Screen()
+win.screensize(canvwidth=400, canvheight=400)
+win.bgcolor("Black")
+win.title("Space Shooters")
+
 
 ship = turtle.Turtle()
 ship.speed(0)
@@ -15,12 +16,15 @@ ship.color('red')
 def ship_left():
     y = ship.xcor()
     y = y - 15
+    ship.setx(y)
 
 def ship_right():
     y = ship.xcor()
     y = y + 15
+    ship.setx(y)
 
 window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
+
 while True:
-    window.update()
+    win.update()
