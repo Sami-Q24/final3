@@ -22,9 +22,10 @@ def create_astroids():
     astroid_.color("yellow")
     astroid_.shape("square")
     astroid_.shapesize(stretch_wid=2, stretch_len=2)
-    for i in range(1000):
+    for i in range(1020):
         window.update()
         astroid_.setx(astroid_.xcor()+vel)
+    astroid_.hideturtle()
 
 create_astroids()
 
