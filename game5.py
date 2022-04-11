@@ -13,21 +13,13 @@ ship.shape('square')
 ship.goto(-450, 0)
 ship.color('red')
 
-vel = -1
+bullet = turtle.Turtle()
+bullet.speed(0)
+bullet.penup()
+bullet.shape('circleq')
 
-def create_astroids():
-    astroid_ = turtle.Turtle()
-    astroid_.penup()
-    astroid_.goto(500, 0)
-    astroid_.color("yellow")
-    astroid_.shape("square")
-    astroid_.shapesize(stretch_wid=2, stretch_len=2)
-    for i in range(1020):
-        window.update()
-        astroid_.setx(astroid_.xcor()+vel)
-    astroid_.hideturtle()
+def fire_bullet():
 
-create_astroids()
 
 def ship_left():
     y = ship.xcor()
@@ -47,6 +39,29 @@ def ship_down():
      y = y - 15
      ship.sety(y)
 
+def ship_up_right():
+    x = ship.ycor()
+    y = ship.xcor()
+    x = x+15
+    y = y+15
+    ship.setx(y)
+    ship.sety(x)
+
+vel = -1
+
+def create_astroids():
+    astroid_ = turtle.Turtle()
+    astroid_.penup()
+    astroid_.goto(500, 0)
+    astroid_.color("yellow")
+    astroid_.shape("square")
+    astroid_.shapesize(stretch_wid=2, stretch_len=2)
+    for i in range(1020):
+        window.update()
+        astroid_.setx(astroid_.xcor()+vel)
+    astroid_.hideturtle()
+
+create_astroids()
 
 def border():
     if ship.xcor()>480:
@@ -57,18 +72,6 @@ def border():
         ship.sety(175)
     elif ship.ycor()<-175:
         ship.sety(-175)
-
-
-
-def ship_up_right():
-    x = ship.ycor()
-    y = ship.xcor()
-    x = x+15
-    y = y+15
-    ship.setx(y)
-    ship.sety(x)
-
-
 
 window.listen()
 window.onkeypress(ship_left, "a")
