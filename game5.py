@@ -47,6 +47,7 @@ def ship_down():
      y = y - 15
      ship.sety(y)
 
+
 def border():
     if ship.xcor()>390:
         ship.setx(390)
@@ -57,11 +58,26 @@ def border():
     elif ship.ycor()<-300:
         ship.sety(-300)
 
+
+
+def ship_up_right():
+    x = ship.ycor()
+    y = ship.xcor()
+    x = x+15
+    y = y+15
+    ship.setx(y)
+    ship.sety(x)
+
+
+
 window.listen()
 window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 window.onkeypress(ship_up, "w")
 window.onkeypress(ship_down, "s")
+
+window.onkeypress(ship_up_right, "w" and "d")
+
 
 while True:
     window.update()
