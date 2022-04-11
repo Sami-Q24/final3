@@ -75,8 +75,7 @@ window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 window.onkeypress(ship_up, "w")
 window.onkeypress(ship_down, "s")
-
-window.onkeypress(ship_up_right, "w" and "d")
+# window.onkeypress(ship_up_right, "w" and "d") this doesnt work....
 
 
 while True:
