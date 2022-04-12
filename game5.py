@@ -16,9 +16,17 @@ ship.color('red')
 bullet = turtle.Turtle()
 bullet.speed(0)
 bullet.penup()
-bullet.shape('circleq')
-
+bullet.shape('circle')
+bullet.color('blue')
+bullet.shapesize(5)
+bullety=1.5
 def fire_bullet():
+   x = ship.xcor()
+   y = ship.ycor()
+   bullet.setx(x)
+   bullet.sety(y)
+   if window.onkeypress(fire_bullet, "u"):
+       bullet.sety(bullet.ycor() + bullety)
 
 
 def ship_left():
