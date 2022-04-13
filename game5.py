@@ -10,7 +10,7 @@ ship.shapesize(stretch_wid=1, stretch_len=1)
 ship.goto(-450, 0)
 ship.color('red')
 
-<<<<<<< Updated upstream
+
 bullet = turtle.Turtle()
 bullet.speed(0)
 bullet.penup()
@@ -18,6 +18,7 @@ bullet.shape('circle')
 bullet.color('blue')
 bullet.shapesize(0.5)
 bullety=1.5
+
 def fire_bullet():
    x = ship.xcor()
    y = ship.ycor()
@@ -27,10 +28,9 @@ def fire_bullet():
        bullet.sety(bullet.ycor() + bullety)
 
 fire_bullet()
-=======
+
 def hide():
     ship.hideturtle()
->>>>>>> Stashed changes
 
 def ship_left():
     y = ship.xcor()
@@ -91,14 +91,11 @@ def border():
     elif ship.ycor()<-175:
         ship.sety(-175)
 
-<<<<<<< Updated upstream
 window.listen()
 window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 window.onkeypress(ship_up, "w")
 window.onkeypress(ship_down, "s")
-#window.onkeypress(ship_up_right, "w" and "d") this doesnt work....
-=======
 
 def fire_bullet():
    x = ship.xcor()
@@ -135,8 +132,6 @@ for i in range(100):
     print("steps" + str(100//vel_steps))
     steps = int((1000//vel_steps) + 2)
     create_astroids(spawny, steps)
-
->>>>>>> Stashed changes
 
 
 while True:
