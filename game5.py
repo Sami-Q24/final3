@@ -18,7 +18,7 @@ bullet.speed(0)
 bullet.penup()
 bullet.shape('circle')
 bullet.color('blue')
-bullet.shapesize(5)
+bullet.shapesize(0.5)
 bullety=1.5
 def fire_bullet():
    x = ship.xcor()
@@ -28,6 +28,7 @@ def fire_bullet():
    if window.onkeypress(fire_bullet, "u"):
        bullet.sety(bullet.ycor() + bullety)
 
+fire_bullet()
 
 def ship_left():
     y = ship.xcor()
@@ -86,7 +87,7 @@ window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 window.onkeypress(ship_up, "w")
 window.onkeypress(ship_down, "s")
-# window.onkeypress(ship_up_right, "w" and "d") this doesnt work....
+#window.onkeypress(ship_up_right, "w" and "d") this doesnt work....
 
 
 while True:
