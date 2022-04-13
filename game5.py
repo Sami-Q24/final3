@@ -46,7 +46,6 @@ def ship_down():
      y = ship.ycor()
      y = y - 15
      ship.sety(y)
-
 def ship_up_right():
     x = ship.ycor()
     y = ship.xcor()
