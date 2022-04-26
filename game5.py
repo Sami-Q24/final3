@@ -1,12 +1,17 @@
 import random
 import turtle
 import time
+import pygame,sys
 
 
 window = turtle.Screen()
 window.setup(width=1000, height=400)
 window.bgcolor('black')
 window.tracer(0)
+
+class ship(pygame.sprite.Sprite):
+    def init (self, width, height, pos_x, pos_y, color):
+
 
 
 ship = turtle.Turtle()
@@ -16,13 +21,9 @@ ship.shape('square')
 ship.shapesize(stretch_wid=1, stretch_len=1)
 ship.goto(-450, 0)
 ship.color('red')
+pygame.image.load('Spaceship.png')
 
-window = turtle.Screen()
-window.setup(width=1000, height=400)
-window.bgcolor('black')
-window.tracer(0)
 
-<<<<<<< Updated upstream
 
 def create_astroids(spawny, steps):
     bullet = turtle.Turtle()
@@ -31,6 +32,7 @@ def create_astroids(spawny, steps):
     bullet.shape('circle')
     bullet.color('blue')
     bullet.shapesize(0.5)
+    pygame.image.load('Bullet.png')
     bullety = 2
     bullet.hideturtle()
     global shot
@@ -62,8 +64,6 @@ def create_astroids(spawny, steps):
     astroid_.hideturtle()
     turtle.hideturtle()
 
-=======
->>>>>>> Stashed changes
 def hide():
     ship.hideturtle()
 
@@ -86,11 +86,9 @@ def ship_down():
      y = y - 15
      ship.sety(y)
 
-<<<<<<< Updated upstream
-=======
 vel = -3/4
 
->>>>>>> Stashed changes
+
 def border():
     if ship.xcor()>480:
         ship.setx(480)
@@ -101,8 +99,6 @@ def border():
     elif ship.ycor()<-175:
         ship.sety(-175)
 
-
-<<<<<<< Updated upstream
 vel = -3/4
 
 window.listen()
@@ -110,13 +106,16 @@ window.onkeypress(ship_left, "a")
 window.onkeypress(ship_right, "d")
 window.onkeypress(ship_up, "w")
 window.onkeypress(ship_down, "s")
-=======
+
+
 def create_astroids(spawny, steps):
     astroid_ = turtle.Turtle()
     astroid_.penup()
     astroid_.goto(500, spawny)
     astroid_.color("yellow")
     astroid_.shape("square")
+    pygame.image.load('Astroid.png')
+
     astroid_.shapesize(stretch_wid=2, stretch_len=2)
     for i in range(steps):
         window.update()
@@ -126,7 +125,6 @@ def create_astroids(spawny, steps):
 
         astroid_.setx(astroid_.xcor()+vel)
     astroid_.hideturtle()
->>>>>>> Stashed changes
 
 for i in range(100):
     window.update()
@@ -134,16 +132,14 @@ for i in range(100):
     vel = random.randint(2, 7)
     vel = -(vel/5)
     vel_steps = -vel
-<<<<<<< Updated upstream
     steps = int((1000//vel_steps) + 10)
-=======
     steps = int((1000//vel_steps) + 2)
->>>>>>> Stashed changes
     create_astroids(spawny, steps)
 
 
 bulletx=3
 bullet_despawn = False
+
 def fire():
     bullet_despawn = True
     print("shot")
@@ -175,13 +171,7 @@ if bullet_despawn == False:
     window.onkeypress(fire, "u")
 
 
-def fire_bullet():
-   x = ship.xcor()
-   y = ship.ycor()
-   bullet.setx(x)
-   bullet.sety(y)
-   if window.onkeypress(fire_bullet, "u"):
-       bullet.sety(bullet.ycor() + bullety)
+
 
 
 
